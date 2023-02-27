@@ -1,0 +1,15 @@
+.container {
+    padding: 50px;
+    background: #FFFFFF;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-height: '100vh';
+    font-size: 40;
+    color: '#010101';    
+    height: 420px;
+};

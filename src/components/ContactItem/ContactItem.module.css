@@ -1,0 +1,10 @@
+.contact__item{
+    margin-top: 10px;
+    display: flex;
+        justify-content: space-between;    
+       
+ } 
+
+.contact__button{
+  margin-left: 10px;
+}
