@@ -30,8 +30,7 @@ h1,
     height: auto;
  }
   
- ul {
-   
+ ul {   
    margin: 0;
    padding-left: 0;
  }
