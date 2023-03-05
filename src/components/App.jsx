@@ -30,21 +30,27 @@ export class App extends Component {
     }  
 }
 
+formSubmitHandler = (data, resetForm) => {
+    const { name, number } = data;
+    const { contacts } = this.state;
+    const newContact = contacts.find(contact => contact.name === name);
 
-  formSubmitHandler = NewContact => {          
-    const includesName = this.state.contacts.find(
-      contact => contact.name.toLocaleLowerCase() === NewContact.name.toLocaleLowerCase()
-    );
-      if (includesName) {
-        return alert(`${NewContact.name} is already in contacts.`); 
-       
-      } else {      
-       let myContact = { id: nanoid(), name: NewContact.name, number: NewContact.number };
+    if (newContact) {
+      return alert(`${name} is already in contacts`);
+    } else {
+      const contact = {
+        id: nanoid(),
+        name: name,
+        number: number,
+      };
+
       this.setState(prevState => ({
-        contacts: [...prevState.contacts, myContact],
+        contacts: [contact, ...prevState.contacts],
       }));
-    }; 
-  };  
+      resetForm();
+    }
+  };
+  
 
   deleteContact = contactId => {
     this.setState(prevState => ({
@@ -70,7 +76,7 @@ export class App extends Component {
      const searchContacts = this.getContact();
      return (
       <div className={css.container}>
-        <GlobalStyle />
+         <GlobalStyle />        
         <Form onSubmit={this.formSubmitHandler} />        
         <div>
           <h2>Contacts</h2>
